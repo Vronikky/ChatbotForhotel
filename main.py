@@ -1,10 +1,7 @@
 import telebot
 from telebot import types
 import datetime
-from dotenv import load_dotenv
 
-load_dotenv()
-#Bot_Token = os.environ.get("Bot_Token")
 Bot_Token = '7504411607:AAF94hIkBCH_zzbWGD-ePQP2OTzZCDx6UQI'
 bot = telebot.TeleBot(Bot_Token)
 users = {}
