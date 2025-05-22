@@ -106,28 +106,7 @@ def process_potverornot(message):
 
     elif message.text.strip() == 'Отменить':
         bot.send_message(chat_id, 'Бронь отменена', reply_markup=glavnoe_menu())
-# # --- Персонал (Staff) ---
-@bot.message_handler(func=lambda message: message.text == "Меню персонала" )
-def staff_menu(message):
-    chat_id = message.chat.id
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    view_bookings_button = types.KeyboardButton("Просмотр бронирований")
-    set_availability_button = types.KeyboardButton("Управление номерами")
-    markup.add(view_bookings_button, set_availability_button)
-    bot.send_message(chat_id, "Меню персонала:", markup)
-@bot.message_handler(func=lambda message: message.text == "Управление номерами" )
-def staff_menu_manage_rooms(message):
-    chat_id = message.chat.id
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True, one_time_keyboard=True)
-    add_room_button = types.KeyboardButton("Добавить номер")
-    delete_room_button = types.KeyboardButton("Удалить номер")
-    markup.add(add_room_button,delete_room_button)
-    bot.send_message(chat_id, "Меню номеров:", markup)
 
-@bot.message_handler(func=lambda message: message.text == "Добавить номер")
-def add_room(message):
-    chat_id = message.chat.id
-    bot.send_message(chat_id, "Введите, то что хотите добавить")
 
 if __name__ == '__main__':
     print("Бот запущен...")
